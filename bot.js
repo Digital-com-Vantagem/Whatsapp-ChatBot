@@ -8,7 +8,7 @@ client.on('qr', qr => {
 });
 
 client.on('ready', () => {
-    console.log('Pronto!');
+    console.log('client ready!');
 });
 
 client.on('message', message => {
