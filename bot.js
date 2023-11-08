@@ -1,6 +1,7 @@
+const http = require('http');
 const qrcode = require('qrcode-terminal');
-
 const { Client } = require('whatsapp-web.js');
+
 const client = new Client();
 
 client.on('qr', qr => {
@@ -18,3 +19,12 @@ client.on('message', message => {
 });
 
 client.initialize();
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200);
+    res.end('Server is running...');
+});
+
+server.listen(3000, () => {
+    console.log('Server is running on port 3000...');
+});
